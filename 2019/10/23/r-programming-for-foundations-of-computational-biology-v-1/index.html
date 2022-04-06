@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>R programming for Foundations of Computational Biology V.1 - Jian CUI Ph.D.</title><link rel="icon" type="image/png" href=favicon.ico /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="R programming for Foundations of Computational Biology V.1" />
+<meta property="og:description" content="This handout was generated for Foundations of Computational BiologyCOBB 2009. It introduced the basic R operation and some advanced tricks that help to run your script more efficiently. The handout contains both tutorial and homework.
+Introduction Advances:   Very well maintained communities and detailed manuals.
+  The Comprehensive R Archive Network (CRAN), a network of FTP and web servers around the world that store identical, up-to-date, versions of code and documentation for R." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/2019/10/23/r-programming-for-foundations-of-computational-biology-v-1/" />
+<meta property="article:published_time" content="2019-10-23T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-10-23T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="R programming for Foundations of Computational Biology V.1"/>
+<meta name="twitter:description" content="This handout was generated for Foundations of Computational BiologyCOBB 2009. It introduced the basic R operation and some advanced tricks that help to run your script more efficiently. The handout contains both tutorial and homework.
+Introduction Advances:   Very well maintained communities and detailed manuals.
+  The Comprehensive R Archive Network (CRAN), a network of FTP and web servers around the world that store identical, up-to-date, versions of code and documentation for R."/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" /><link rel="stylesheet" type="text/css" href="/css/dark.css"  />
+
+	<script src="/js/feather.min.js"></script>
+	
+	<script src="/js/main.js"></script>
+	<link rel="stylesheet" href="/css/obsidian.css" rel="stylesheet" id="theme-stylesheet">
+	<script src="/js/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	
+	
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    </script>
+    
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<base href="/">
+	<h1 class="site-title"><a href="/">Jian CUI Ph.D.</a></h1>
+	<div class="site-description"><h2>Postdoctoral associate @ <a href="https://upddi.pitt.edu/">Drug Discovery Institute - University of Pittsburgh</a></h2><nav class="nav social">
+			<ul class="flat"><a href="mailto:cuij@pitt.edu" title="Email"><i data-feather="mail"></i></a><a href="https://github.com/NaijIuc" title="Github"><i data-feather="github"></i></a><a href="https://www.linkedin.com/in/jian-cui-61ab121b0/" title="LinkedIn"><i data-feather="linkedin"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">R programming for Foundations of Computational Biology V.1</h1>
+			<div class="meta">Posted at &mdash; Oct 23, 2019</div>
+		</div>
+
+		<div class="markdown">
+			<p>This handout was generated for Foundations of Computational BiologyCOBB 2009. It introduced the basic R operation and some advanced tricks that help to run your script more efficiently. The handout contains both tutorial and homework.</p>
+<h1 id="introduction">Introduction</h1>
+<h2 id="advances">Advances:</h2>
+<ul>
+<li>
+<p>Very well maintained communities and detailed manuals.</p>
+<ul>
+<li>
+<p><a href="https://cran.r-project.org/">The Comprehensive R Archive Network (CRAN)</a>, a network of FTP and web servers around the world that store identical, up-to-date, versions of code and documentation for R.</p>
+</li>
+<li>
+<p><a href="https://www.bioconductor.org/">Bioconductor</a>, tools for the analysis and comprehension of high-throughput genomic data. Bioconductor uses the R statistical programming language, and is open source and open development.</p>
+</li>
+<li>
+<p>Introductional documents: <a href="http://cran.r-project.org/other-docs.html">http://cran.r-project.org/other-docs.html</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p>For most time in using R, you barely do not need to program, due to the increasing number of <em>package</em>s, so you can find almost every method/algorithm in R.</p>
+</li>
+<li>
+<p>Excellent plotting function</p>
+</li>
+</ul>
+<pre><code class="language-{r}">demo(graphics)
+</code></pre>
+<ul>
+<li>Rstudio</li>
+</ul>
+<h2 id="weakness">Weakness:</h2>
+<ul>
+<li>R is <strong>slower</strong>, than like Julia, Python, etc</li>
+<li>Lack of proper coding standard, indentation</li>
+<li>Not friendly to the non-English environment</li>
+<li>The quality of packages is not guaranteed</li>
+</ul>
+<h1 id="rstudio">Rstudio</h1>
+<p>An integrated development environment (IDE) for R(python), including <strong>Source</strong>, <strong>Console</strong>, <strong>Environment, History, Connections</strong>, and <strong>Files, Plots, Packages, Help, Viewer</strong>.</p>
+<ol>
+<li>
+<p>Source, code writing, new file, and run code;</p>
+</li>
+<li>
+<p>Console, execution code, and test;</p>
+</li>
+<li>
+<p>Environment, History, <em>Connections</em>;</p>
+<ul>
+<li>
+<p>Environment: to record the variable values</p>
+</li>
+<li>
+<p>History: the record of code execution</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Files, Plots, Packages, Help, Viewer.</p>
+</li>
+</ol>
+<h1 id="r-basic">R basic</h1>
+<h2 id="get-help">Get help</h2>
+<ul>
+<li>&ldquo;?topic&rdquo; for local package or function</li>
+<li>apropos(&ldquo;keyword&rdquo;) full name of a function</li>
+</ul>
+<h2 id="pacakges">pacakges</h2>
+<p>An R package bundles together code, data, documentation, and tests, and is easy to share with others</p>
+<ul>
+<li>install.packages()/ remove.pacakges()</li>
+<li><a href="https://www.bioconductor.org/install/"><em>BiocManager::install()</em></a></li>
+<li>library()/ detach()</li>
+</ul>
+<h2 id="datasets">Datasets</h2>
+<p>There are 104 build-in datasets in R, and can be loaded with data()</p>
+<pre><code class="language-{r}">head(data()$results[,c(3,4)])
+data(&quot;CO2&quot;)
+head(CO2, 3)
+</code></pre>
+<h2 id="type-of-data">Type of data</h2>
+<ul>
+<li>character: &ldquo;a&rdquo;, &ldquo;swc&rdquo;</li>
+<li>numeric: 2, 15.5</li>
+<li>integer: 2L (the L tells R to store this as an integer)</li>
+<li>logical: TRUE, FALSE</li>
+<li>complex: 1+4i (complex numbers with real and imaginary parts)</li>
+</ul>
+<p>&ldquo;&lt;-&rdquo; and &ldquo;=&rdquo; can be used to assign values. &ldquo;&lt;-&rdquo; is for the global environment, and &ldquo;=&rdquo; is for local. Try code below:</p>
+<pre><code class="language-{r,eval=FALSE}">mean(x = 1:10); x; mean(x &lt;- 1:10); x
+</code></pre>
+<h2 id="data-structures">Data structures</h2>
+<ul>
+<li><strong>vector</strong>, the most common and basic data structure in R;</li>
+<li><strong>factors</strong>, variables take on a limited number of different values, often referred to as categorical variables;</li>
+<li><strong>data frame</strong>, a very important data type in R for most tabular data;</li>
+<li><strong>matrix</strong>, matrices are an extension of the numeric or character vectors;</li>
+<li><strong>list</strong>, a container.</li>
+</ul>
+<p>Some of these structures require that all members be of the same data type (e.g. vectors, matrices) while others permit multiple data types (e.g. lists, data frames).
+To check the types or structures of data, &ldquo;class()&rdquo; can be employed.</p>
+<pre><code class="language-{r,eval=FALSE}">#If there are different types of data in a vector, then it forcely forms a charactpr vector:
+a &lt;- c(1,2,3); b &lt;- c(1L,&quot;apple&quot;,2+5i, logical(2))
+a; b
+
+#factor:
+c &lt;- factor(c(1:5,1,3,5)); c
+
+# matrix
+m &lt;- matrix(1:6, nrow = 2, ncol = 3); n &lt;- matrix(1:6, nrow = 3, ncol = 2)
+m; n; m%*%n; n%*%m
+
+# data frame
+head(CO2)
+
+# list
+list &lt;- list(a,b,c,CO2,m,n)
+</code></pre>
+<h2 id="functions-and-loops">Functions and loops</h2>
+<p>Functions sturcture:</p>
+<pre><code class="language-{r}">myfunction &lt;- function(arg1, arg2, ... ){
+statements
+return(object)
+}
+</code></pre>
+<p>Example:</p>
+<pre><code class="language-{r,eval=FALSE}">myfunct &lt;- function(x){
+  y=x^3+x^2+x+1
+}
+x &lt;- seq(-10,10,0.5)
+y &lt;- myfunct(x)
+
+</code></pre>
+<p>for loop:</p>
+<pre><code class="language-{r}">for (val in sequence) {
+  statement
+}
+
+# Example:
+for (i in 1:5) {
+  print(i)
+}
+</code></pre>
+<p>while loop:</p>
+<pre><code class="language-{r}">while (test_expression) {
+   statement
+}
+
+# Example:
+v &lt;- c(&quot;Hello&quot;,&quot;while loop&quot;)
+cnt &lt;- 2
+while (cnt &lt; 7) {
+   print(v)
+   cnt = cnt + 1
+}
+</code></pre>
+<p>repeat loop:</p>
+<pre><code class="language-{r,eval=FALSE}">repeat { 
+   commands 
+   if(condition) {
+      break
+   }
+}
+
+# Example
+v &lt;- c(&quot;Hello&quot;,&quot;loop&quot;)
+cnt &lt;- 2
+repeat {
+   print(v)
+   cnt &lt;- cnt+1
+   if(cnt &gt; 5) {
+      break
+   }
+}
+</code></pre>
+<h2 id="file-operations">File operations</h2>
+<p>R can read files from local files, online files, and memory, with variant types. With the help of some packages, R can access the Excel file as well. E.g.</p>
+<pre><code class="language-{r,eval=FALSE}">t1 &lt;- read.table(&quot;local file&quot;)
+t2 &lt;- read.csv('https://data.ok.gov/sites/default/files/unspsc%20codes_3.csv')
+t3 &lt;- readLines(&quot;clipboard&quot;)
+
+library(&quot;readxl&quot;)
+t4 &lt;- read_excel(&quot;my_file.xls&quot;)
+</code></pre>
+<p>Enter data using a spreadsheet</p>
+<pre><code class="language-{r}">edit(t2)
+fix(t2)
+</code></pre>
+<p>Operations on data frame, like merge, subset, isolate &hellip;(demo)</p>
+<p>Write files:</p>
+<pre><code class="language-{r,">sink(&quot;file.txt&quot;)
+writeLines()
+write.csv()
+write.table()
+</code></pre>
+<p>Save writes an external representation of R objects to the specified file. The objects can be read back from the file at a later date.</p>
+<pre><code class="language-{r,eval=FALSE}">save.image(file = &quot;.RData&quot;, version = NULL,...)
+</code></pre>
+<p>The saved files can be read by using function <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/load.html">load</a> or <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/attach.html">attach</a> (or <a href="https://stat.ethz.ch/R-manual/R-devel/library/utils/html/data.html">data</a> in some cases).</p>
+<h2 id="simple-graphs-with-r">Simple Graphs with R</h2>
+<pre><code class="language-{r}">t &lt;- c(1,1,2,2,3,3,6)
+names(t) &lt;- LETTERS[1:7]
+
+# subpanel option 1
+par(mfrow=c(3,2)) # row col
+
+# subpanel option 2
+layout ( matrix ( c (1 , 1 , 1 ,
+                     2 , 3 , 4 ,
+                     2 , 3 , 5) , nr = 3 , byrow = T) )
+
+plot(t)
+barplot(t)
+hist(t)
+pie(t)
+dotchart(t)
+boxplot(t)
+</code></pre>
+<p>Save images, <strong>Export</strong> is able to help save the plot for sure, but if you want high-quality figures, by using:</p>
+<pre><code class="language-{r,eval=FALSE}">jpeg/png/pdf('rplot.jpg/png/pdf', width = 8, height = 8, unit=&quot;in&quot;, res=300)
+plot(x,y)
+dev.off()
+</code></pre>
+<h2 id="the-common-workflow-of-r">The common workflow of R</h2>
+<ol>
+<li>Create a specific working directory and set it as default by &ldquo;setwd()&quot;;</li>
+<li>Manage read/write files in subdirectory, and use &ldquo;dir.create()&quot;;</li>
+<li>Managing r image file (.RData) makes your work more efficient.</li>
+</ol>
+<h1 id="r-advance">R advance</h1>
+<h2 id="apply-functions">Apply functions</h2>
+<p>To make a for loop more efficient, &ldquo;apply()&rdquo; function is introduced in R. The <code>apply</code> functions (<code>apply, sapply, lapply</code> etc.) are marginally faster than a regular for loop.</p>
+<pre><code class="language-{r}">N &lt;- 10000
+x1 &lt;- runif(N)
+x2 &lt;- runif(N)
+d &lt;- as.data.frame(cbind(x1, x2))
+
+system.time(for (i in c(1:length(d[, 1]))) {
+    d$mean1[i] &lt;- mean(c(d[i, 1], d[i, 2]))
+})
+
+system.time(d$mean2 &lt;- apply(d, 1, mean))
+
+library(parallel)
+numCores &lt;- detectCores()
+cl &lt;- makeCluster(numCores)
+system.time(d$mean3 &lt;- parApply(cl,d,1, mean))
+stopCluster(cl)
+</code></pre>
+<h2 id="intro-to-ggplot2">Intro to ggplot2</h2>
+<p>Basic, use <code>qplot()</code> function (quick plot), designed primarily for interactive use: it makes several assumptions that speed most cases.</p>
+<pre><code class="language-{r}">data(&quot;diamonds&quot;)
+
+qplot(carat, price, data = diamonds)
+qplot(log(carat),log(price),data = diamonds)
+qplot(carat, x*y*z, data = diamonds)
+head(diamonds)
+
+dsmall &lt;- diamonds[sample(nrow(diamonds),100),]
+qplot(carat, price, data = dsmall, col=color)
+
+# shape = cut;
+# alpha = I (transparent)
+# ...
+</code></pre>
+<p>Plot <code>geoms</code> (geometics)
+geom = point/ smooth/ boxplot/ path/ histogram &hellip;</p>
+<pre><code class="language-{r}">qplot(color, price, data = dsmall, geom = 'boxplot', 
+      #fill = color,
+      size = 1) + geom_boxplot(outlier.color = &quot;green&quot;,
+                                outlier.size = 10,
+                                fill = &quot;red&quot;,
+                                col = &quot;blue&quot;)
+
+</code></pre>
+<p>When designing multilayered plots with different data sources it can get in the way. This section describes what those defaults are, and how they map to the fuller <code>ggplot()</code> syntax.</p>
+<pre><code class="language-{r}">qplot(carat, price, data = dsmall, geom = c(&quot;point&quot;, &quot;smooth&quot;))
+ggplot(dsmall, aes(carat, price)) + geom_point() + geom_smooth()
+</code></pre>
+<p>When the conditions get more complecated, like we want to check the carat and price relationship under different cut, or cut and color&hellip;</p>
+<pre><code class="language-{r}">gg &lt;- ggplot(diamonds, aes(x=carat, y=price, color=cut)) +
+  geom_point() + labs(title=&quot;Scatterplot&quot;, x=&quot;Carat&quot;, y=&quot;Price&quot;)
+gg + facet_wrap( ~ cut, ncol=3)
+gg + facet_grid(color ~ cut) 
+</code></pre>
+<h2 id="nicely-output-r-markdownhttpsrmarkdownrstudiocom">Nicely output: <a href="https://rmarkdown.rstudio.com/">R markdown</a></h2>
+<p>The combination of R and markdown, a text enriched conversion tool for the web? writers and it allows you to write using an easy-to-read, easy-to-write plain text format, then convert it to structurally valid formats (PDF, HTML, MS Word). R markdown even allows you to write academic manuscripts with a well-organized bibliography.</p>
+<pre><code class="language-{r,eval=FALSE}">install.packages(&quot;rmarkdown&quot;)
+install.packages(&quot;rticles&quot;)
+</code></pre>
+<pre><code>Text formatting 
+------------------------------------------------------------
+
+*italic*  or _italic_
+**bold**   __bold__
+`code`
+superscript^2^ and subscript~2~
+
+Headings
+------------------------------------------------------------
+
+# 1st Level Header
+
+## 2nd Level Header
+
+### 3rd Level Header
+
+Lists
+------------------------------------------------------------
+
+*   Bulleted list item 1
+
+*   Item 2
+
+    * Item 2a
+
+    * Item 2b
+
+1.  Numbered list item 1
+
+1.  Item 2. The numbers are incremented automatically in the output.
+
+Links and images
+------------------------------------------------------------
+
+&lt;http://example.com&gt;
+
+[linked phrase](http://example.com)
+
+![optional caption text](path/to/img.png)
+
+Tables 
+------------------------------------------------------------
+
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
+</code></pre>
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/r">R</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+		</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> Copyright © by Jian Cui |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Healthy Ride on Jian CUI Ph.D.</title>
+    <link>/tags/healthy-ride/</link>
+    <description>Recent content in Healthy Ride on Jian CUI Ph.D.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © by Jian Cui</copyright>
+    <lastBuildDate>Thu, 13 Aug 2020 13:54:25 -0400</lastBuildDate>
+    
+	<atom:link href="/tags/healthy-ride/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>hmwk5</title>
+      <link>/2020/08/13/hmwk5/</link>
+      <pubDate>Thu, 13 Aug 2020 13:54:25 -0400</pubDate>
+      
+      <guid>/2020/08/13/hmwk5/</guid>
+      <description>1. Obtain the data and read it into a data frameAfter skimming the file, I have got two strategies to read the file into a data frame.
+From the file, the none data parts are labeled with “!”, such as below links [1:3], so to get rid of these parts, the remaining are the data requested.
+I used. Before and after the data part, two sentences are containing “matrix_table_begin/end” (following lines [5:6]).</description>
+    </item>
+    
+  </channel>
+</rss>
