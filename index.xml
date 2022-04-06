@@ -14,8 +14,7 @@
       <pubDate>Tue, 08 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>/2020/09/08/tim-s-homework-3-performed-with-r/</guid>
-      <description>How many times do you expect you will have to toss an unbiased coin before it comes up &amp;ldquo;heads&amp;rdquo; twice in a row? How many times do you expect you will need to flip it before it comes up &amp;ldquo;heads&amp;rdquo; immediately followed by &amp;ldquo;tails&amp;rdquo;? Write a program that simulates a string of fair coin tosses. The program should:
- Perform 10000 trials in which a coin is tossed until &amp;ldquo;heads-heads&amp;rdquo; occurs, and 10000 trials in which a coin is tossed until &amp;ldquo;heads-tails&amp;rdquo; occurs.</description>
+      <description>How many times do you expect you will have to toss an unbiased coin before it comes up &amp;ldquo;heads&amp;rdquo; twice in a row?</description>
     </item>
     
     <item>
@@ -24,8 +23,7 @@
       <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>/2020/09/01/tim-s-homework-performed-with-r/</guid>
-      <description>In Gödel, Escher, Bach: An Eternal Golden Braid, Douglas Hofstadter describes a property of integers:   We begin with your number, and if it is ODD, we triple it and add 1. If it is EVEN, we take half of it. Then we repeat the process. Call a number which eventually reaches 1 this way a WONDROUS number, and a number which doesn’t, an UNWONDROUS number.
- Write a Python script called wondrous.</description>
+      <description>In Gödel, Escher, Bach: An Eternal Golden Braid, Douglas Hofstadter describes a property of integers:   We begin with your number, and if it is ODD, we triple it and add 1.</description>
     </item>
     
     <item>
@@ -34,8 +32,7 @@
       <pubDate>Mon, 31 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>/2020/08/31/a-simple-web-tool-for-compound-condidates-selection/</guid>
-      <description>This Demo is established with R shiny to looking for some possibilities in drug discovery. Since there is a lot of information need organizing during the analysis and is difficult to perform in a relatively simple way. Therefore, by employing shiny, the whole performance of the analysis result can be shown in a simple interactive way.
-if you are interested in the project, please click this link</description>
+      <description>This Demo is established with R shiny to looking for some possibilities in drug discovery. Since there is a lot of information need organizing during the analysis and is difficult to perform in a relatively simple way.</description>
     </item>
     
     <item>
@@ -44,9 +41,7 @@ if you are interested in the project, please click this link</description>
       <pubDate>Wed, 23 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>/2019/10/23/r-programming-for-foundations-of-computational-biology-v-1/</guid>
-      <description>This handout was generated for Foundations of Computational BiologyCOBB 2009. It introduced the basic R operation and some advanced tricks that help to run your script more efficiently. The handout contains both tutorial and homework.
-Introduction Advances:   Very well maintained communities and detailed manuals.
-  The Comprehensive R Archive Network (CRAN), a network of FTP and web servers around the world that store identical, up-to-date, versions of code and documentation for R.</description>
+      <description>This handout was generated for Foundations of Computational BiologyCOBB 2009. It introduced the basic R operation and some advanced tricks that help to run your script more efficiently.</description>
     </item>
     
     <item>
@@ -55,9 +50,7 @@ Introduction Advances:   Very well maintained communities and detailed manuals.
       <pubDate>Wed, 23 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>/2019/10/23/r-programming-for-foundations-of-computational-biology-v-1/</guid>
-      <description>This handout was generated for Foundations of Computational BiologyCOBB 2009. It introduced the basic R operation and some advanced tricks that help to run your script more efficiently. The handout contains both tutorial and homework.
-Introduction Advances:   Very well maintained communities and detailed manuals.
-  The Comprehensive R Archive Network (CRAN), a network of FTP and web servers around the world that store identical, up-to-date, versions of code and documentation for R.</description>
+      <description>This handout was generated for Foundations of Computational BiologyCOBB 2009. It introduced the basic R operation and some advanced tricks that help to run your script more efficiently.</description>
     </item>
     
     <item>
@@ -66,8 +59,7 @@ Introduction Advances:   Very well maintained communities and detailed manuals.
       <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
       
       <guid>/about/</guid>
-      <description>I am an aspiring data scientist who enjoys connecting the dots: be it ideas from multiple biological disciplines, people from different teams, or applications from different platforms. I have strong technical skills and an academic background in systems biology, molecular biology, statistics, and data science.
-My passion lies in solving biological problems with tailored data and algorithms and communicating complex ideas to non-technical stakeholders. I am able to jump across verticals to deliver high-performing solutions.</description>
+      <description>I am an aspiring data scientist who enjoys connecting the dots: be it ideas from multiple biological disciplines, people from different teams, or applications from different platforms.</description>
     </item>
     
   </channel>

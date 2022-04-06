@@ -14,8 +14,7 @@
       <pubDate>Mon, 31 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>/2020/08/31/a-simple-web-tool-for-compound-condidates-selection/</guid>
-      <description>This Demo is established with R shiny to looking for some possibilities in drug discovery. Since there is a lot of information need organizing during the analysis and is difficult to perform in a relatively simple way. Therefore, by employing shiny, the whole performance of the analysis result can be shown in a simple interactive way.
-if you are interested in the project, please click this link</description>
+      <description>This Demo is established with R shiny to looking for some possibilities in drug discovery. Since there is a lot of information need organizing during the analysis and is difficult to perform in a relatively simple way.</description>
     </item>
     
     <item>
@@ -24,9 +23,7 @@ if you are interested in the project, please click this link</description>
       <pubDate>Wed, 23 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>/2019/10/23/r-programming-for-foundations-of-computational-biology-v-1/</guid>
-      <description>This handout was generated for Foundations of Computational BiologyCOBB 2009. It introduced the basic R operation and some advanced tricks that help to run your script more efficiently. The handout contains both tutorial and homework.
-Introduction Advances:   Very well maintained communities and detailed manuals.
-  The Comprehensive R Archive Network (CRAN), a network of FTP and web servers around the world that store identical, up-to-date, versions of code and documentation for R.</description>
+      <description>This handout was generated for Foundations of Computational BiologyCOBB 2009. It introduced the basic R operation and some advanced tricks that help to run your script more efficiently.</description>
     </item>
     
     <item>
@@ -35,9 +32,7 @@ Introduction Advances:   Very well maintained communities and detailed manuals.
       <pubDate>Wed, 23 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>/2019/10/23/r-programming-for-foundations-of-computational-biology-v-1/</guid>
-      <description>This handout was generated for Foundations of Computational BiologyCOBB 2009. It introduced the basic R operation and some advanced tricks that help to run your script more efficiently. The handout contains both tutorial and homework.
-Introduction Advances:   Very well maintained communities and detailed manuals.
-  The Comprehensive R Archive Network (CRAN), a network of FTP and web servers around the world that store identical, up-to-date, versions of code and documentation for R.</description>
+      <description>This handout was generated for Foundations of Computational BiologyCOBB 2009. It introduced the basic R operation and some advanced tricks that help to run your script more efficiently.</description>
     </item>
     
   </channel>
